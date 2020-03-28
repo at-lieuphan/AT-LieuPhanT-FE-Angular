@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="title-page">{{ title }}</h1>
+  <ul class="product-list row">
+    <div class="col-4 item" *ngFor="let product of products">
+      <li class="product-item" >
+        <h4 class="product-title">
+          {{ product.title | limitText : 30 }}
+        </h4>
+        <p class="product-description">
+          {{ product.decription | limitText : 250 }}
+        </p>
+      </li>
+    </div>
+  </ul>
+  <form action="" class="form-group">
+    <div class="form-list">
+      <div class="form-item">
+        <Label class="input-title">Input Title: </Label>
+        <input class="form-control" type="text" [(ngModel)]="inputTitle" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-item">
+        <label for="" class="input-title">Input Decription: </label>
+        <input type="text" class="form-control" [(ngModel)]="inputDecription" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="btn-list">
+      <button class="btn btn-save-local" (click)="setLocal(inputTitle, inputDecription)">Save Local</button>
+      <button class="btn btn-get-local" (click)="getLocal()">Get Local</button>
+      <button class="btn btn-save-local" (click)="setSession(inputTitle, inputDecription)">Save Session</button>
+      <button class="btn btn-get-session" (click)="getSession()">Get Session</button>
+    </div>
+  </form>
+  <div class="result">
+    <div class="result-item">
+      <h4 class="result-title">GetLocal: </h4>
+      <p class="result-decription">{{ resultLocal | json}}</p>
+    </div>
+    <div class="result-item">
+      <h4 class="result-title">GetSession: </h4>
+      <p class="result-decription">{{ resultSession | json}}</p>
+    </div>    
+  </div>
+</div>
