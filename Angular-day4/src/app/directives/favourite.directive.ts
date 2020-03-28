@@ -12,7 +12,11 @@ export class FavouriteDirective {
     if (ele.nodeName === 'I') {
       this.dataResult.isToken = !this.dataResult.isToken;
       this.dataResult.isToken ? this.dataResult.amount += 1 : this.dataResult.amount -= 1;
-      ele.style.color = 'red';
+      if(this.dataResult.isToken) {
+        ele.style.color = 'red';
+      } else {
+        ele.style.color = 'grey';
+      }
     }
   }
 }
