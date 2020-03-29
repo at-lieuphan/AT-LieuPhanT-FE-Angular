@@ -10,8 +10,8 @@ import { Subscription } from 'rxjs';
 
 export class AppComponent {
   title = 'Everything You Should Know About the 2019 Coronavirus and COVID-19';
-  resultLocal : object;
-  resultSession : object;
+  resultLocal : object[];
+  resultSession : object[];
   inputDecription : string;
   inputTitle: string;
   products=[
@@ -54,28 +54,28 @@ export class AppComponent {
       have an intimate partner who has contracted the virus`
     }
   ]
-  constructor(private _localerService: LocalerService){}
+  constructor(private localerService: LocalerService){}
 
   setLocal(title : string, decription: string) {
-    let newArr = [{title:title, decription:decription}]
-    this._localerService.saveLocalStorage(newArr);
+    let newObject = {title:title, decription:decription}
+    this.localerService.saveLocalStorage(newObject);
     this.inputTitle = '';
     this.inputDecription = '';
   }
 
   getLocal() {
-    this.resultLocal = this._localerService.getLocalStorage();
+    this.resultLocal = this.localerService.getLocalStorage();
   }
 
   setSession(title: string, decription: string) {
-    let newArr = [{title:title, decription:decription}]
-    this._localerService.saveSessionStorage(newArr);
+    let newObject = {title:title, decription:decription}
+    this.localerService.saveSessionStorage(newObject);
     this.inputTitle = '';
     this.inputDecription = '';
   }
 
   getSession() {
-    this.resultSession = this._localerService.getSessionStorage();
+    this.resultSession = this.localerService.getSessionStorage();
   }
 
 }

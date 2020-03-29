@@ -4,23 +4,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LocalerService {
-  public arrMessageLocal = new Observable<object[]>();
-  public arrMessageSession = new Observable<string[]>();
   constructor() { }
 
-  saveLocalStorage(arr: object[]) {
-    localStorage.setItem('Message', JSON.stringify(arr));
+  saveLocalStorage(ob: object) {
+    localStorage.setItem('Message', JSON.stringify(ob));
   }
 
-  getLocalStorage() : Observable<object[]> {
-    return this.arrMessageLocal = JSON.parse(localStorage.getItem('Message'));
+  getLocalStorage() {
+    return JSON.parse(localStorage.getItem('Message'));
   }
 
-  saveSessionStorage(arr: object[]) {
-    sessionStorage.setItem('Message', JSON.stringify(arr));
+  saveSessionStorage(ob: object) {
+    sessionStorage.setItem('Message', JSON.stringify(ob));
   }
 
-  getSessionStorage() : Observable<object[]>{
-    return this.arrMessageSession = JSON.parse(sessionStorage.getItem('Message'));
+  getSessionStorage() {
+    return JSON.parse(sessionStorage.getItem('Message'));
   }
 }
