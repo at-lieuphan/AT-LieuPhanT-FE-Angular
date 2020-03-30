@@ -15,7 +15,7 @@ export class AppComponent {
   products=[
     {
       id: 1,
-      title: 'What to do if you have symptoms of COVID-19',
+      title: 'What to do if?',
       decription: `If you have COVID-19 or suspect you have the 
       virus that causes COVID-19, you should seek medical care.
       You have several options for obtaining medical care,
