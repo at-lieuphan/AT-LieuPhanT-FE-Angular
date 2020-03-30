@@ -8,11 +8,11 @@ import { LocalerService } from './services/localer.service';
 
 export class AppComponent {
   title = 'Everything You Should Know About the 2019 Coronavirus and COVID-19';
-  resultLocal : object[];
-  resultSession : object[];
-  inputDecription : string;
+  resultLocal: object[];
+  resultSession: object[];
+  inputDecription: string;
   inputTitle: string;
-  products=[
+  products = [
     {
       id: 1,
       title: 'What to do if?',
@@ -55,25 +55,25 @@ export class AppComponent {
   constructor(private localerService: LocalerService){}
 
   setLocal(title : string, decription: string) {
-    let newObject = {title:title, decription:decription}
-    this.localerService.saveLocalStorage(newObject, 'Message');
+    let newObject = {title:title, decription:decription};
+    this.localerService.saveLocalStorage(newObject, 'message');
     this.inputTitle = '';
     this.inputDecription = '';
   }
 
   getLocal() {
-    this.resultLocal = this.localerService.getLocalStorage('Message');
+    this.resultLocal = this.localerService.getLocalStorage('message');
   }
 
   setSession(title: string, decription: string) {
     let newObject = {title:title, decription:decription}
-    this.localerService.saveSessionStorage(newObject, 'Message');
+    this.localerService.saveSessionStorage(newObject, 'message');
     this.inputTitle = '';
     this.inputDecription = '';
   }
  
   getSession() {
-    this.resultSession = this.localerService.getSessionStorage('Message');
+    this.resultSession = this.localerService.getSessionStorage('message');
   }
 
 }
