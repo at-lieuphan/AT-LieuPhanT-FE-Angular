@@ -9,6 +9,13 @@
 
 # dependencies
 /node_modules
+*.json
+/assets
+/environments
+main.ts
+polyfills.ts
+test.ts
+karma.conf.js
 
 # profiling files
 chrome-profiler-events*.json

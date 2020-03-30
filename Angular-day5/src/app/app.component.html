@@ -4,10 +4,10 @@
     <div class="col-4 item" *ngFor="let product of products">
       <li class="product-item" >
         <h4 class="product-title">
-          {{ product.title | limitText : 30 }}
+          {{ product.title | limitText : 0 : 30 }}
         </h4>
         <p class="product-description">
-          {{ product.decription | limitText : 250 }}
+          {{ product.decription | limitText : 0 : 250 }}
         </p>
       </li>
     </div>
