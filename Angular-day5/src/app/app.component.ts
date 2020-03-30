@@ -56,24 +56,24 @@ export class AppComponent {
 
   setLocal(title : string, decription: string) {
     let newObject = {title:title, decription:decription}
-    this.localerService.saveLocalStorage(newObject);
+    this.localerService.saveLocalStorage(newObject, 'Message');
     this.inputTitle = '';
     this.inputDecription = '';
   }
 
   getLocal() {
-    this.resultLocal = this.localerService.getLocalStorage();
+    this.resultLocal = this.localerService.getLocalStorage('Message');
   }
 
   setSession(title: string, decription: string) {
     let newObject = {title:title, decription:decription}
-    this.localerService.saveSessionStorage(newObject);
+    this.localerService.saveSessionStorage(newObject, 'Message');
     this.inputTitle = '';
     this.inputDecription = '';
   }
  
   getSession() {
-    this.resultSession = this.localerService.getSessionStorage();
+    this.resultSession = this.localerService.getSessionStorage('Message');
   }
 
 }

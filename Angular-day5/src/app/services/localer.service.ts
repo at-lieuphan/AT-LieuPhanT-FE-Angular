@@ -6,19 +6,19 @@ import { Observable } from 'rxjs';
 export class LocalerService {
   constructor() { }
 
-  saveLocalStorage(ob: object) {
-    localStorage.setItem('Message', JSON.stringify(ob));
+  saveLocalStorage(ob: object, key: string) {
+    localStorage.setItem(key, JSON.stringify(ob));
   }
 
-  getLocalStorage() {
-    return JSON.parse(localStorage.getItem('Message'));
+  getLocalStorage(key: string) {
+    return JSON.parse(localStorage.getItem(key));
   }
 
-  saveSessionStorage(ob: object) {
-    sessionStorage.setItem('Message', JSON.stringify(ob));
+  saveSessionStorage(ob: object, key) {
+    sessionStorage.setItem(key, JSON.stringify(ob));
   }
 
-  getSessionStorage() {
-    return JSON.parse(sessionStorage.getItem('Message'));
+  getSessionStorage(key: string) {
+    return JSON.parse(sessionStorage.getItem(key));
   }
 }
