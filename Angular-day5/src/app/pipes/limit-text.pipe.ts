@@ -6,7 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class LimitTextPipe implements PipeTransform {
 
   transform(value: string, start: number, end: number): any {
-    return value.substr(start, end) + '...';
+    if(value.length > end){
+      return value.substr(start, end) + '...';
+    }
+    else {
+      return value;
+    }
   }
 
 }
