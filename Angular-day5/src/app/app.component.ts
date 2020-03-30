@@ -1,7 +1,5 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { LocalerService } from './services/localer.service';
-import { Observable } from 'rxjs';
-import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
