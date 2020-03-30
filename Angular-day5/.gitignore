@@ -13,7 +13,7 @@
 /assets
 /environments
 main.ts
-polyfills.ts
+/src/polyfills.ts
 test.ts
 karma.conf.js
 
