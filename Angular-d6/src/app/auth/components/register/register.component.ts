@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   }
 
   checkPass() {
-    if(this.passWord === this.passConfig) {
+    if (this.passWord === this.passConfig) {
       this.isValidPass = true;
     }
     else {
