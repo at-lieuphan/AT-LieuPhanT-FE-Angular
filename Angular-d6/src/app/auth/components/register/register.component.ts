@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit {
   city = '';
   passWord = '';
   passConfig = '';
-  isValidPass: boolean = true;
+  isValidPass: boolean = true; 
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -24,14 +25,4 @@ export class RegisterComponent implements OnInit {
     console.log(f.value);
   }
 
-  checkPass() {
-    if (this.passWord === this.passConfig) {
-      this.isValidPass = true;
-    }
-    else {
-      this.isValidPass = false;
-    }
-    console.log(this.isValidPass);
-
-  }
 }
