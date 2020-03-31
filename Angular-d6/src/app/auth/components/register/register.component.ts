@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   fullname = '';
   email = '';
   homeNumber = '';
@@ -14,12 +14,8 @@ export class RegisterComponent implements OnInit {
   city = '';
   passWord = '';
   passConfig = '';
-  isValidPass: boolean = true;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   register(f: NgForm) {
     console.log(f.value);
