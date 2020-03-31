@@ -38,7 +38,6 @@
         <label for="">Config password:</label>
         <input type="password" class="form-control mt-2 mb-2" name="passconf" [(ngModel)]="passConfig" #passConf="ngModel" required>
         <div class="log-error" *ngIf="passConf.invalid && (passConf.dirty || passConf.touched)">Required!</div>
-        <div class="log-error" *ngIf="!isValidPass">Password error!</div>
       </div>
       <div>
         <button class="btn btn-sign d-flex mg-auto" [disabled]="registerForm.invalid">Sign Up</button>
